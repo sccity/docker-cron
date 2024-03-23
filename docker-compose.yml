@@ -1,0 +1,13 @@
+version: '3'
+services:
+  docker-cron:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sccity/docker-cron:prod
+    container_name: docker-cron
+    environment:
+      - TZ=America/Denver
+    privileged: true
+    restart: unless-stopped
+    #user: "1435:1435" 
